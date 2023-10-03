@@ -9,9 +9,11 @@ public class Animals {
     private boolean isMammal;
 
     public Animals(String family, String name, int age, boolean isMammal) {
+        if(age<0) {
+            this.age=0;
+        }
         this.family = family;
         this.name = name;
-        this.age = age;
         this.isMammal = isMammal;
     }
     public void displayAnimal(){

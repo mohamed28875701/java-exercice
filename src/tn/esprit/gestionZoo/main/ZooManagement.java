@@ -10,11 +10,11 @@ class ZooManagement {
           Animals cat = new Animals("feline","cat",2,false);
           Zoo myZoo=new Zoo("yay","bizerte");
 
-        myZoo.addAnimal(lion);
-        myZoo.addAnimal(duck);
-        myZoo.displayAnimals();
-        System.out.println(myZoo.removeAnimal(lion));
-        myZoo.displayAnimals();
+          myZoo.addAnimal(lion);
+          myZoo.addAnimal(duck);
+          myZoo.displayAnimals();
+          System.out.println(myZoo.removeAnimal(lion));
+          myZoo.displayAnimals();
 
     }
 }

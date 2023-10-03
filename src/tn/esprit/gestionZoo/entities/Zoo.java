@@ -7,11 +7,14 @@ public class Zoo {
     private String city;
 
 
-    final int nbrCages=25;
+    private final int nbrCages=25;
 
     public Zoo(String name,String city){
+        if(name.isEmpty()) {
+            this.name="no empty";
+        }
         animals=new Animals[nbrCages];
-        this.name=name;
+
         this.city=city;
     }
     void displayZoo(){
@@ -74,6 +77,7 @@ public class Zoo {
 
     public int getNbrCages() {
         return nbrCages;
+
     }
 
     public String getCity() {
