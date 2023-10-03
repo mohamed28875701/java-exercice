@@ -1,3 +1,8 @@
+package tn.esprit.gestionZoo.main;
+
+import tn.esprit.gestionZoo.entities.Animals;
+import tn.esprit.gestionZoo.entities.Zoo;
+
 class ZooManagement {
     public static void main(String[] args) {
           Animals lion = new Animals("feline","lion",4,true);
