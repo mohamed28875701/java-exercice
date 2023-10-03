@@ -1,5 +1,6 @@
 public class Zoo {
     Animals[] animals;
+    int nbrAnimals;
     String name;
     String city;
     final int nbrCages=25;
@@ -22,6 +23,7 @@ public class Zoo {
         for(int i=0;i!=animals.length;i++){
             if(animals[i]==null){
                 animals[i]=animal;
+                nbrAnimals++;
                 return true;
             }
         }
@@ -52,27 +54,13 @@ public class Zoo {
             j++;
         }
         this.animals=newArr;
+        nbrAnimals--;
         return true;
     }
     public boolean isFull(){
-        for(int i =0;i!=animals.length;i++){
-            if(animals[i]==null) return false;
-        }
-        return true;
+        return nbrAnimals>nbrCages;
     }
-    public Zoo comparerZoo(Zoo zoo){
-        if(zoo.isFull() && !this.isFull()) return zoo;
-        if (!zoo.isFull()&&this.isFull()) return this;
-        int cntHere=0,cnt=0;
-        for(int i=0;i!=animals.length;i++){
-            if(this.animals[i]!=null){ cnt++;}
-            if(zoo.animals[i]!=null){cntHere++;}
-        }
-        if(cnt>cntHere)return this;
-        return zoo;
-
-
-
-
+    public static Zoo comparerZoo(Zoo zoo1,Zoo zoo2){
+        return zoo1.nbrAnimals> zoo2.nbrCages?zoo1:zoo2;
     }
 }
