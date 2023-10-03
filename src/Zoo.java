@@ -61,6 +61,6 @@ public class Zoo {
         return nbrAnimals>nbrCages;
     }
     public static Zoo comparerZoo(Zoo zoo1,Zoo zoo2){
-        return zoo1.nbrAnimals> zoo2.nbrCages?zoo1:zoo2;
+        return zoo1.nbrAnimals> zoo2.nbrAnimals?zoo1:zoo2;
     }
 }
