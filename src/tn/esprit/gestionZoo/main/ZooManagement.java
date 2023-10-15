@@ -1,7 +1,6 @@
 package tn.esprit.gestionZoo.main;
 
-import tn.esprit.gestionZoo.entities.Animals;
-import tn.esprit.gestionZoo.entities.Zoo;
+import tn.esprit.gestionZoo.entities.*;
 
 class ZooManagement {
     public static void main(String[] args) {
@@ -15,6 +14,10 @@ class ZooManagement {
           myZoo.displayAnimals();
           System.out.println(myZoo.removeAnimal(lion));
           myZoo.displayAnimals();
+          Aquatic aquaticAnimal=new Aquatic();
+          Terrestrial terrestrialAnimal=new Terrestrial();
+          Dolphin dol=new Dolphin();
+          Penguin peg=new Penguin();
 
     }
 }
