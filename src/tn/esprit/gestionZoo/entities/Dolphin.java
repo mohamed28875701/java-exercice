@@ -1,7 +1,7 @@
 package tn.esprit.gestionZoo.entities;
 
 public class Dolphin extends Aquatic{
-    private float swimmingSpeed;
+    protected float swimmingSpeed;
 
     public Dolphin() {
 
@@ -22,7 +22,7 @@ public class Dolphin extends Aquatic{
 
     @Override
     public String toString() {
-        return super.toString()+"\nswimming speed"+swimmingSpeed;
+        return super.toString()+"\nswimming speed "+swimmingSpeed;
     }
     public void swim(){
         System.out.println("this dolphin can swim");
