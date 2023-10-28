@@ -6,9 +6,9 @@ public class Zoo {
     private String name;
     private String city;
 
-    private Aquatic[] aquaticAnimals;
+    public Aquatic[] aquaticAnimals;
 
-    private final int nbrCages=25;
+    private final int nbrCages=3;
 
     public Zoo(String name,String city){
         if(name.isEmpty()) {
@@ -26,16 +26,22 @@ public class Zoo {
     public String toString() {
         return "name :"+name+"\ncity : "+city+"\nnombre de cages : "+nbrCages;
     }
-    public boolean addAnimal(Animals animal){
-        if(searchAnimal(animal)!=-1 || isFull()) return false;
+    public void addAnimal(Animals animal) throws ZooFullException,InvalidAgeException{
+        //if(searchAnimal(animal)!=-1) return ;
+        if(isFull()){
+
+            throw new ZooFullException("the zoo is full");
+        }
+        if(animal.age<0) throw new InvalidAgeException("age is negative");
         for(int i=0;i!=animals.length;i++){
             if(animals[i]==null){
                 animals[i]=animal;
                 nbrAnimals++;
-                return true;
+                System.out.println(nbrAnimals);
+                return ;
             }
         }
-        return false;
+
     }
     public void displayAnimals(){
         for(int i = 0;animals[i]!=null;i++){
@@ -66,7 +72,7 @@ public class Zoo {
         return true;
     }
     public boolean isFull(){
-        return nbrAnimals>nbrCages;
+        return nbrAnimals==nbrCages;
     }
     public static Zoo comparerZoo(Zoo zoo1,Zoo zoo2){
         return zoo1.nbrAnimals> zoo2.nbrAnimals?zoo1:zoo2;

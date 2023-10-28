@@ -8,9 +8,9 @@ public class Animals {
 
     public Animals(){}
     public Animals(String family, String name, int age, boolean isMammal) {
-        if(age<0) {
-            this.age=0;
-        }
+
+            this.age=age;
+
         this.family = family;
         this.name = name;
         this.isMammal = isMammal;
