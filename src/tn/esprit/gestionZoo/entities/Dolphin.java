@@ -27,4 +27,12 @@ public class Dolphin extends Aquatic{
     public void swim(){
         System.out.println("this dolphin can swim");
     }
+
+    @Override
+    public void eatMeat(Food meat) {
+        if(meat.equals(Food.MEAT))
+            System.out.println("this dolphin eats meat");
+        else
+            System.out.println("this dolphin doesnt eat meat");
+    }
 }

@@ -19,7 +19,25 @@ class ZooManagement {
           catch (ZooFullException|InvalidAgeException e){
                 System.err.println(e.getMessage());
           }
-          
+          Aquatic aquatic = new Aquatic() {
+                @Override
+                public void swim() {
+                      System.out.println("this aquatic swims");
+                }
 
+                @Override
+                public void eatMeat(Food meat) {
+                        if(meat.equals(Food.MEAT))
+                              System.out.println("this animal eats meat");
+                        else
+                              System.out.println("this aquatic doesnt eat meat");
+                }
+          };
+          aquatic.eatMeat(Food.PLANT);
+          Penguin peng=new Penguin("birds","dol",3,false,"antartica",2.4f);
+          peng.eatMeat(Food.MEAT);
+          Terrestrial ter=new Terrestrial("pig","hacoona",4,true,4);
+          ter.eatPlantAndMeat(Food.BOTH);
+          ter.eatPlantAndMeat(Food.MEAT);
     }
 }
